@@ -1,0 +1,38 @@
+#header_style{
+    text-align: center;
+    text-decoration: underline;
+    background-color: aqua;
+}
+
+.heart_img{
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom:16px;
+    padding-top:2px
+}
+
+.number_input{
+    margin-top:8px;
+    margin-bottom: 8px;
+
+}
+
+.dropdown_box{
+    margin-top: 8px;
+    display:block;
+}
+
+.dropdown_options{
+    display:block;
+    padding: 8px;
+}
+
+@media (min-width: 600px){
+    #header_style{
+        text-align: center;
+        text-decoration: underline;
+    }
+}
