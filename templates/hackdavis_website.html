@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Likelihood</title>
+    <link rel = "stylesheet" href="{{ url_for('static', filename='hackdavis_stylesheet.css') }}">
+    <script src="{{url_for('static', filename='sample.js')}}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="dropdown">
+            <div class="container" onclick="dropdownAnimation(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="dropdown-content">
+              <a href="#start">Survey</a>
+              <a href="{{ url_for('static', filename='pages/about.html') }}">Models And Dataset Description</a>
+              <a href="{{ url_for('static', filename='pages/Author.html') }}">Authors and Sources</a>
+            </div>
+        </div>
+        <div class="links">
+             <h2>How Likely Are You To Develop Heart Disease?</h2>
+        </div>
+      </nav>
+<main class="main">
+    <div class="parallex"></div>
+    <div class="survey">
+    <p> Heart disease is one of the leading causes of death
+        in the United States. This website uses a model trained on 
+        health data collected from an annual survey conducted by the CDC.</p>
+
+     <!--Add heart image (TRIAL, can be deleted if desired)-->
+     
+    
+     <h3>Answer the following 17 survey questions to calculate your risk of developing heart disease.</h3>
+    
+<!-- Question 1: BMI-->
+    <form method="post">
+
+        <label class = "number_input" for="BMI">1. What is your body mass index (BMI)? </label><br>
+        <input type = "number" id="BMI" name="BMI"><br>
+
+    <!-- Question 2: Smoking-->
+    <label class = "dropdown_box"  for = "smoking">2. Have you smoked at least 100 cigarettes (5 packs) in your entire life?</label>
+    <select class = "dropdown_options" id = "smoking" name = "smoking">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+
+    <!--Question 3: Heavy Drinking-->
+    <label class="dropdown_box" for = "drinking" name = "drinking">
+     <div class="myDIV">3. Are you a Heavy Drinker?</div>
+     <div class="hide">Heavy drinking is defined as more than 14 drinks per week 
+        for adult men, and more than 7 drinks per week for women.</div>
+     <select class = "dropdown_options" id = "drinking" name = "drinking">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!-- Question 4: Stroke-->
+    <label class = "dropdown_box" for = "stroke" name = "stroke">
+        4. Have you ever had a stroke?
+    
+    <select class="dropdown_options" id = "stroke" name = "stroke">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!-- Question 5: Physical Health -->   
+        <label class = "number_input" for="PhysHealth">5. Out of the last 30 days, how many days would you describe your physical health as "poor"? </label><br>
+        <input type = "number" id="PhysHealth" name = "PhysHealth"><br>
+
+    <!--Question 6: Mental Health-->
+        <label class = "number_input" for="MentHealth">6. Out of the last 30 days, how many days would you describe your mental health as "poor"? </label><br>
+        <input type = "number" id="MentHealth" name = "MentHealth"><br>
+    
+    <!--Question 7: Difficulty Walking up stairs-->
+    <label class = "dropdown_box" for = "DiffWalk" name = "DiffWalk">
+        7. Do you have serious difficulty walking or climbing stairs?
+    
+    <select class="dropdown_options" id = "DiffWalk" name = "DiffWalk">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!--Question 8: Sex-->
+    <label class = "dropdown_box" for = "Sex" name = "Sex">
+        8. Are you a male or female?
+    
+    <select class="dropdown_options" id = "Sex" name = "Sex">
+        <option value = " "> </option>
+        <option value = "Male">Male</option>
+        <option value = "Female">Female</option>
+    </select>
+    </label>
+
+    <!--Question 9: Age category-->
+    <label class = "dropdown_box" for = "Age" name = "Age">
+        9. What is your age?
+    
+    <select class="dropdown_options" id = "Age" name = "Age">
+        <option value = " "> </option>
+        <option value = "18-24">18-24</option>
+        <option value = "25-29">25-29</option>
+        <option value = "30-34">30-34</option>
+        <option value = "35-39">35-39</option>
+        <option value = "40-44">40-44</option>
+        <option value = "45-49">45-49</option>
+        <option value = "50-54">50-54</option>
+        <option value = "55-59">55-59</option>
+        <option value = "60-64">60-64</option>
+        <option value = "65-69">65-69</option>
+        <option value = "70-74">70-74</option>
+        <option value = "75-79">75-79</option>
+        <option value = "80 or older">80 or older</option>
+    </select>
+    </label>
+
+    <!--Question 10: Race-->
+    <label class = "dropdown_box" for = "Race" name = "Race">
+        10. What is your race?
+    
+    <select class="dropdown_options" id = "Race" name = "Race">
+        <option value = " "> </option>
+        <option value = "American Indian/Alaskan Native">American Indian/Alaskan Native</option>
+        <option value = "Hispanic">Hispanic</option>
+        <option value = "White">White</option>
+        <option value = "Black">Black</option>
+        <option value = "Asian">Asian</option>
+        <option value = "Other">Other</option>
+    </select>
+    </label>
+
+    <!--Question 11: Diabetes-->
+    <label class = "dropdown_box" for = "Diabetes" name = "Diabetes">
+        11. Do you currently have diabetes?
+    
+    <select class="dropdown_options" id = "Diabetes" name = "Diabetes">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "No, Borderline Diabetes">Pre-Diabetes</option>
+        <option value = "Yes (During Pregnancy)">Yes (During Pregnancy)</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!--Question 12: PhysicalActivity-->
+    <label class = "dropdown_box" for = "PhysAct" name = "PhysAct">
+        12. Other than your job, have you done any physical activity in the past 30 days?
+    
+    <select class="dropdown_options" id = "PhysAct" name = "PhysAct">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!--Question 13: GenHealth-->
+    <label class = "dropdown_box" for = "GenHealth" name = "GenHealth">
+        13. How would you describe your overall health?
+    
+    <select class="dropdown_options" id = "GenHealth" name = "GenHealth">
+        <option value = " "> </option>
+        <option value = "Poor">Poor</option>
+        <option value = "Fair">Fair</option>
+        <option value = "Good">Good</option>
+        <option value = "Very Good">Very Good</option>
+        <option value = "Excellent">Excellent</option>
+    </select>
+    </label>
+
+    <!--Question 14: sleep time -->
+    
+        <label class = "number_input" for="Sleep"> 14. On average, how many hours of sleep do you get in a 24-hr period?</label><br>
+        <input type = "number" id="Sleep" name = "Sleep"><br>
+    
+
+    <!-- Question 15: Asthma-->
+    <label class = "dropdown_box" for = "Asthma" name = "Asthma">
+        15. Do you have asthma?
+    
+    <select class="dropdown_options" id = "Asthma" name = "Asthma">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+
+    <!--Question 16: KidneyDisease-->
+    <label class="dropdown_box" for = "KidneyDisease" name = "KidneyDisease">
+        <div class="myDIV">16. Do you have kidney disease?</div>
+        <div class="hide">This does not include kidney stones, bladder infections, or incontinence.</div>
+        <select class = "dropdown_options" id = "KidneyDisease" name = "KidneyDisease">
+            <option value = " "> </option>
+           <option value = "No">No</option>
+           <option value = "Yes">Yes</option>
+       </select>
+       </label>
+
+    <!--SkinCancer-->
+    <label class = "dropdown_box" for = "SkinCancer" name = "SkinCancer">
+        17. Have you ever had skin cancer?
+    
+    <select class="dropdown_options" id = "SkinCancer" name = "SkinCancer">
+        <option value = " "> </option>
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+    </label>
+        
+        <div id = "container_risk">
+            <div id = "risk_button">
+                <button type="submit">Calculate Risk!</button>
+            </div>
+        </div>
+    </form>
+    <h2>>> {{OUTPUT_RESULT}}</h2>
+    <br></br>
+    <h2>    {{OUTPUT_TXT}}</hr>
+    <br></br>
+    </div>
+
+</main>
+</body>
+</html>
