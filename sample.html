@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Add metadata here, and style sheet info-->
+<head>
+    <title>2022 HackDavis Project</title>
+    <link rel = "stylesheet" href = "sample_style_sheet.css">
+</head>
+
+<body>
+
+    <!-- Header and opening text information-->
+   <h1 id = "header_style">How Likely Are You To Develop Heart Disease?</h1> 
+    <p>Heart disease is one of the leading causes of death
+        in the United States. This website uses a model trained on 
+        health data collected from an annual survey conducted by the CDC.
+    </p>
+
+    <p>Enter your responses to the following questions and the model will predict your 
+        likelihood of developing heart disease.
+    </p>
+
+    <!--Add heart image (TRIAL, can be deleted if desired)-->
+    <img src =  "hd-risk.jpg" class = "heart_img" >
+
+    <!-- Question 1: BMI-->
+    <form>
+        <label class = "number_input" for="BMI"> What is your body mass index (BMI)? </label><br>
+        <input type = "number" id="BMI" name = "BMI"><br>
+    </form>
+
+    <!-- Question 2: Smoking-->
+    <label class = "dropdown_box"  for = "smoking"> Have you smoked at least 100 cigarettes (5 packs) in your entire life?</label>
+    <select class = "dropdown_options" id = "smoking" name = "smoking">
+        <option value = "No">No</option>
+        <option value = "Yes">Yes</option>
+    </select>
+
+    <!--Question 3: Heavy Drinking-->
+    <label class="dropdown_box" for = "heavy_drinking" name = "heavy_drinking">
+     Are you a <span href = "Heavy drinking is defined as more than 14 drinks per week 
+     for adult men, and more than 7 drinks per week for women">heavy drinker?</span> 
+
+
+
+    </label>
+    
+
+</body>
+
+
