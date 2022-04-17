@@ -13,3 +13,7 @@ How to navigate this project:
 - `notebooks` contains jupyter notebooks for exploratory data analysis and machine learning modelling.
 - `frontend` contains html and css styling files including website deployment using flask. 
 - `webapp.py` runs the entire web application that we've built. Contains our machine learning model and code that inserts user input into our model.
+
+Before starting: 
+
+Try running "set FLASK_APP=webapp.py", and ("$env:FLASK_APP = "webapp.py" or "export FLASK_APP=app.py")
