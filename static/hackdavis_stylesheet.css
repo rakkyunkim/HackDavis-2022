@@ -1,0 +1,217 @@
+body{
+    font-family: "Montserrat",sans-serif;
+    background-color: rgb(223, 120, 120);
+    margin: 0;
+    font-size: 18px;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+.survey{
+    margin: 15px;
+}
+h2{
+    color: white;
+}
+.parallex{
+    /* The image used */
+  background-image: url("hd-background.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input{
+    margin-left: 15px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+select{
+  border-radius: 10px;
+}
+.number_input{
+    font-weight: 700px;
+}
+.main{
+    padding: 0;
+}
+.links{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_space{
+    margin-left: 15px;
+}
+
+#risk_button{
+    margin:0;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center
+}
+
+#container_risk{
+    height: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+nav {
+    filter: blur(1.5rem);
+    position: sticky;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border-radius: 20px;
+    height: 50px;
+  }
+.heart_img{
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom:16px;
+    padding-top:2px
+}
+
+.number_input{
+    margin-top:8px;
+    margin-bottom: 8px;
+
+}
+
+.dropdown_box{
+    margin-top: 8px;
+    display:block;
+}
+
+.dropdown_options{
+    display:block;
+    padding: 8px;
+    margin-left:17px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+
+.hide {
+    display: none;
+}
+.logo img{
+  width: 100%;
+}
+.logo{
+  width: 50px;
+}
+.myDIV:hover + .hide {
+    display: block;
+    color: black;
+}
+
+@media (min-width: 600px){
+    #header_style{
+        text-align: center;
+        text-decoration: underline;
+    }
+}
+
+/* Dropdown Button */
+.container {
+    display: inline-block;
+    cursor: pointer;
+    height: 100%;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  /*.dropdown:hover .dropdown-content {display: block;}*/
+
+  .displayBlock{
+      display: block;
+  }
+  #risk_button button{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
